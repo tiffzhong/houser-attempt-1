@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
-import { updateWizard3 } from "../../ducks/reducer";
+import { updateMortgage, updateRent } from "../../ducks/reducer";
 
 class Wizard3 extends Component {
   constructor() {
@@ -11,32 +11,27 @@ class Wizard3 extends Component {
       mortgage: "",
       rent: ""
     };
-    this.changeMortgage = this.changeMortgage.bind(this);
-    this.changeRent = this.changeRent.bind(this);
-  }
-
-  changeMortgage(val) {
-    this.setState({
-      mortgage: val
-    });
-  }
-
-  changeRent(val) {
-    this.setState({
-      rent: val
-    });
   }
 
   addItem() {
-    const { name, address, city, stateAbbr, zip, image_url } = this.props;
+    const {
+      name,
+      address,
+      city,
+      stateabbr,
+      zip,
+      image_url,
+      mortgage,
+      rent
+    } = this.props;
     console.log("props", this.props);
-    const { mortgage, rent } = this.state;
+
     axios
       .post("/api/house", {
         name,
         address,
         city,
-        stateAbbr,
+        stateabbr,
         zip,
         image_url,
         mortgage,
@@ -49,9 +44,17 @@ class Wizard3 extends Component {
   }
 
   render() {
-    const { name, address, city, stateAbbr, zip, image_url } = this.props;
-    const { updateWizard3 } = this.props;
-    const { mortgage, rent } = this.state;
+    const {
+      name,
+      address,
+      city,
+      stateabbr,
+      zip,
+      image_url,
+      mortgage,
+      rent
+    } = this.props;
+    const { updateMortgage, updateRent } = this.props;
     return (
       <div>
         <h6>Recommended Rent: $0</h6>
@@ -61,14 +64,14 @@ class Wizard3 extends Component {
             name="mortgage"
             type="text"
             input={mortgage}
-            onChange={event => this.changeMortgage(event.target.value)}
+            onChange={event => updateMortgage(event.target.value)}
           />
           <label>Desired Monthly Rent</label>
           <input
             name="rent"
             type="text"
             input={rent}
-            onChange={event => this.changeRent(event.target.value)}
+            onChange={event => updateRent(event.target.value)}
           />
 
           <Link to="/wizard/2">
@@ -79,8 +82,16 @@ class Wizard3 extends Component {
             <button
               className="complete"
               onClick={() => {
-                this.addItem(name, address, city, stateAbbr, zip, image_url);
-                updateWizard3(mortgage, rent);
+                this.addItem(
+                  name,
+                  address,
+                  city,
+                  stateabbr,
+                  zip,
+                  image_url,
+                  mortgage,
+                  rent
+                );
               }}
             >
               Complete
@@ -97,7 +108,7 @@ function mapStateToProps(state) {
     name,
     address,
     city,
-    stateAbbr,
+    stateabbr,
     zip,
     image_url,
     mortgage,
@@ -107,7 +118,7 @@ function mapStateToProps(state) {
     name,
     address,
     city,
-    stateAbbr,
+    stateabbr,
     zip,
     image_url,
     mortgage,
@@ -116,5 +127,5 @@ function mapStateToProps(state) {
 }
 export default connect(
   mapStateToProps,
-  { updateWizard3 }
+  { updateMortgage, updateRent }
 )(Wizard3);

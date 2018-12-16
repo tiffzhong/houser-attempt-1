@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateWizard2 } from "../../ducks/reducer";
+import { updateImageURL } from "../../ducks/reducer";
 
 class Wizard2 extends Component {
   constructor() {
@@ -12,15 +12,9 @@ class Wizard2 extends Component {
     };
   }
 
-  changeImageURL = val => {
-    this.setState({
-      image_url: val
-    });
-  };
-
   render() {
-    const { updateWizard2 } = this.props;
-    const { image_url } = this.state;
+    const { updateImageURL } = this.props;
+    const { image_url } = this.props;
     return (
       <div className="form-info">
         <label>Image URL</label>
@@ -28,7 +22,7 @@ class Wizard2 extends Component {
           name="image_url"
           type="text"
           value={image_url}
-          onChange={event => this.changeImageURL(event.target.value)}
+          onChange={event => updateImageURL(event.target.value)}
         />
         <div>
           <Link to="/wizard/1">
@@ -36,12 +30,7 @@ class Wizard2 extends Component {
           </Link>
 
           <Link to="/wizard/3">
-            <button
-              className="nextstep"
-              onClick={() => updateWizard2(image_url)}
-            >
-              Next Step
-            </button>
+            <button className="nextstep">Next Step</button>
           </Link>
         </div>
       </div>
@@ -58,5 +47,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { updateWizard2 }
+  { updateImageURL }
 )(Wizard2);

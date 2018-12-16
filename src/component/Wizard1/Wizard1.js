@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateWizard1 } from "../../ducks/reducer";
+import {
+  updateName,
+  updateAddress,
+  updateCity,
+  updateStateAbbr,
+  updateZip
+} from "../../ducks/reducer";
 
 class Wizard1 extends Component {
   constructor() {
@@ -11,39 +17,20 @@ class Wizard1 extends Component {
       name: "",
       address: "",
       city: "",
-      stateAbbr: "",
+      stateabbr: "",
       zip: ""
     };
   }
-  changeName = val => {
-    this.setState({
-      name: val
-    });
-  };
-  changeAddress = val => {
-    this.setState({
-      address: val
-    });
-  };
-  changeCity = val => {
-    this.setState({
-      city: val
-    });
-  };
-  changeStateAbbr = val => {
-    this.setState({
-      stateAbbr: val
-    });
-  };
-  changeZip = val => {
-    this.setState({
-      zip: val
-    });
-  };
 
   render() {
-    const { updateWizard1 } = this.props;
-    const { name, address, city, stateAbbr, zip } = this.state;
+    const {
+      updateName,
+      updateAddress,
+      updateCity,
+      updateStateAbbr,
+      updateZip
+    } = this.props;
+    const { name, address, city, stateabbr, zip } = this.props;
     console.log("this.props", this.props);
     return (
       <div className="form">
@@ -52,7 +39,7 @@ class Wizard1 extends Component {
           name="name"
           type="text"
           value={name}
-          onChange={event => this.changeName(event.target.value)}
+          onChange={event => updateName(event.target.value)}
         />
         <br />
         <label>Address</label>
@@ -60,7 +47,7 @@ class Wizard1 extends Component {
           name="address"
           type="text"
           value={address}
-          onChange={event => this.changeAddress(event.target.value)}
+          onChange={event => updateAddress(event.target.value)}
         />
         <br />
         <label>City</label>
@@ -68,14 +55,14 @@ class Wizard1 extends Component {
           name="city"
           type="text"
           value={city}
-          onChange={event => this.changeCity(event.target.value)}
+          onChange={event => updateCity(event.target.value)}
         />
         <label>State</label>
         <input
-          name="stateAbbr"
+          name="stateabbr"
           type="text"
-          value={stateAbbr}
-          onChange={event => this.changeStateAbbr(event.target.value)}
+          value={stateabbr}
+          onChange={event => updateStateAbbr(event.target.value)}
         />
         <br />
         <label>Zip</label>
@@ -83,17 +70,12 @@ class Wizard1 extends Component {
           name="zip"
           type="text"
           value={zip}
-          onChange={event => this.changeZip(event.target.value)}
+          onChange={event => updateZip(event.target.value)}
         />
 
         <div className="link">
           <Link to="/wizard/2">
-            <button
-              className="nextstep"
-              onClick={() => updateWizard1(name, address, city, stateAbbr, zip)}
-            >
-              Next Step
-            </button>
+            <button className="nextstep">Next Step</button>
           </Link>
         </div>
       </div>
@@ -102,17 +84,17 @@ class Wizard1 extends Component {
 }
 
 function mapStateToProps(state) {
-  const { name, address, city, stateAbbr, zip } = state;
+  const { name, address, city, stateabbr, zip } = state;
   return {
     name,
     address,
     city,
-    stateAbbr,
+    stateabbr,
     zip
   };
 }
 
 export default connect(
   mapStateToProps,
-  { updateWizard1 }
+  { updateName, updateAddress, updateCity, updateStateAbbr, updateZip }
 )(Wizard1);

@@ -33,12 +33,7 @@ class Dashboard extends Component {
     const displayHomes = allHomes.map(house => {
       return (
         <div>
-          <House
-            {...house}
-            key={house.id}
-            id={house.id}
-            deleteHouse={this.deleteHouse}
-          />
+          <House {...house} id={house.id} deleteHouse={this.deleteHouse} />
         </div>
       );
     });
