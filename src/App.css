@@ -1,32 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto|Pacifico");
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+header {
+  font-family: Roboto;
+  display: flex;
+  justify-content: center;
+  background-color: #519872;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.house-listing-container {
+  background-color: #dedede;
+}
+
+.house-listing-container img {
+  width: 200px;
+  height: 150px;
+}
+
+.cancel-button {
+  background-color: rgb(255, 131, 131);
+  font-weight: bold;
+}
+
+.form {
+  font-family: Roboto;
+}
+
+.nextstep {
+  background-color: #3b5249;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.previous {
+  background-color: #3b5249;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.complete {
+  background-color: #3b5249;
+  color: white;
+}
+
+input {
+  border-color: #519872;
 }
