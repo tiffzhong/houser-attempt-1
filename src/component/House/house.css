@@ -1,0 +1,40 @@
+.house-container {
+  background-color: #dedede;
+  display: flex;
+  margin: 15px auto;
+  position: relative;
+  padding: 20px;
+  width: 85%;
+}
+
+.house-container img {
+  width: 200px;
+  height: 150px;
+  flex: 2;
+  padding: 5px;
+}
+
+.img-section {
+  flex: 1;
+  padding: 15px;
+}
+.house-info-section {
+  flex: 1;
+  padding: 5px;
+}
+
+.money-section {
+  flex: 1;
+  padding: 5px;
+}
+
+.house-container button {
+  background-color: #dedede;
+  color: black;
+  position: absolute;
+  right: 12px;
+  top: 0px;
+  border: none;
+  font-size: 18px;
+  width: 10px;
+}

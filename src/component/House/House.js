@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./house.css";
 function House(props) {
   let {
     image_url,
@@ -15,17 +15,38 @@ function House(props) {
   } = props;
   console.log("house", props);
   return (
-    <div className="house-listing-container">
-      <img src={image_url} alt={name} />
-      <h5>Property Name: {name} </h5>
-      <h5>Address: {address}</h5>
-      <h5>City: {city}</h5>
-      <h5>State: {stateabbr} </h5>
-      <h5>Zip: {zip}</h5>
-      <h6>Monthly Mortgage: {mortgage}</h6>
-      <h6>Desired Rent: {rent}</h6>
+    <div className="house-container">
+      <div className="img-section">
+        <img src={image_url} alt={name} />
+      </div>
+      <div className="house-info-section">
+        <p>
+          <b>Property Name:</b> {name}
+        </p>
+        <p>
+          <b>Address:</b> {address}
+        </p>
+        <p>
+          <b>City:</b> {city}
+        </p>
+        <p>
+          <b>State: </b>
+          {stateabbr}
+        </p>
+        <p>
+          <b>Zip:</b> {zip}
+        </p>
+      </div>
+      <div className="money-section">
+        <p>
+          <b>Monthly Mortgage:</b> {mortgage}
+        </p>
+        <p>
+          <b>Desired Rent:</b> {rent}
+        </p>
+      </div>
       <button className="delete-button" onClick={() => deleteHouse(id)}>
-        DELETE
+        X
       </button>
     </div>
   );

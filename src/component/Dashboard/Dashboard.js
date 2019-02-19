@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import House from "../House/House";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./dashboard.css";
+
 class Dashboard extends Component {
   constructor() {
     super();
@@ -38,12 +40,16 @@ class Dashboard extends Component {
       );
     });
     return (
-      <div>
-        Dashboard
-        <Link to="/wizard/1">
-          <button className="add-new-button"> Add New Property </button>
-        </Link>
-        <h2> Home Listings</h2>
+      <div className="dashboard">
+        <div className="dashboard-header">
+          Dashboard
+          <Link to="/wizard/1">
+            <button className="add-new-button"> Add New Property </button>
+          </Link>
+        </div>
+        <div className="listing">
+          <h3> Home Listings</h3>
+        </div>
         {displayHomes}
       </div>
     );

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateImageURL } from "../../ducks/reducer";
+import "./wizard2.css";
 
 class Wizard2 extends Component {
   constructor() {
@@ -17,7 +18,9 @@ class Wizard2 extends Component {
     const { image_url } = this.props;
     return (
       <div className="form-info">
-        <label>Image URL</label>
+        <label>
+          <b>Image URL</b>
+        </label>
         <input
           name="image_url"
           type="text"

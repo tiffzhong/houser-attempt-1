@@ -1,42 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Pacifico");
-
 .App {
-  text-align: center;
-}
-
-header {
-  font-family: Roboto;
-  display: flex;
+  background-color: #afd4c0;
   justify-content: center;
-  background-color: #519872;
-}
-
-.house-listing-container {
-  background-color: #dedede;
-}
-
-.house-listing-container img {
-  width: 200px;
-  height: 150px;
-}
-
-.cancel-button {
-  background-color: rgb(255, 131, 131);
-  font-weight: bold;
+  height: 100%;
 }
 
 .form {
   font-family: Roboto;
-}
-
-.nextstep {
-  background-color: #3b5249;
-  color: white;
-}
-
-.previous {
-  background-color: #3b5249;
-  color: white;
 }
 
 .complete {
@@ -45,5 +15,5 @@ header {
 }
 
 input {
-  border-color: #519872;
+  border-color: 5px #afd4c0 solid;
 }

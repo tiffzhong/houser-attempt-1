@@ -1,0 +1,46 @@
+.form {
+  background-color: #e5f4ec;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+}
+.input-field input {
+  width: 60%;
+}
+
+.address-field input {
+  width: 100%;
+}
+
+.helladivs {
+  display: flex;
+  width: 100%;
+}
+
+.city-field input {
+  width: 80%;
+}
+
+.state-field input {
+  width: 60%;
+  margin-right: 5px;
+}
+
+.zip-field input {
+  width: 80%;
+}
+
+.nextstep {
+  background-color: #3b5249;
+  width: 80px;
+  font-weight: bold;
+  height: 30px;
+  color: white;
+  position: absolute;
+  right: 20px;
+  margin: 20px auto;
+}
+
+.link {
+  bottom: 5px;
+}

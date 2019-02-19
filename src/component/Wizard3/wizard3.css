@@ -1,0 +1,32 @@
+.form-info-2 {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+label {
+  font-size: 14px;
+}
+.form-info-2 input {
+  width: 90%;
+}
+.previous-button {
+  background-color: #3b5249;
+  width: 100px;
+  font-weight: bold;
+  height: 30px;
+  color: white;
+  position: absolute;
+  margin: 20px auto;
+  left: 10px;
+}
+
+.complete {
+  background-color: #3b5249;
+  width: 100px;
+  font-weight: bold;
+  height: 30px;
+  color: white;
+  position: absolute;
+  right: 20px;
+  margin: 20px auto;
+}
